@@ -1,15 +1,23 @@
 {
-  "name": "langchain",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@langchain/openai": "^0.6.2"
-  }
+	"name": "langchain",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "index.js",
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@langchain/community": "^0.3.49",
+		"@langchain/core": "^0.3.65",
+		"@langchain/openai": "^0.6.2",
+		"dotenv": "^17.2.0",
+		"langchain": "^0.3.30",
+		"langsmith": "^0.3.46"
+	}
 }
