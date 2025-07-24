@@ -23,5 +23,5 @@ const message = new HumanMessage({
 		},
 	],
 })
-const response = await llm.invoke([message])
-console.log(response.content)
+const response = await llm.stream([message])
+console.log(response)
