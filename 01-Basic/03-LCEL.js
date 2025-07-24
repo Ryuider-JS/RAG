@@ -19,8 +19,11 @@ const model = new ChatOpenAI({
 const parser = new StringOutputParser()
 
 // const chain = prompt.pipe(model).pipe(parser)
-// const chain = RunnableSequence.from([prompt, model, parser])
+const chain = RunnableSequence.from([prompt, model, parser])
 
-const result = await chain.invoke({ topic: '커피' })
+const resultInvoke = await chain.invoke({ topic: '커피' })
+const resultStream = await chain.stream({ topic: '커피' })
 
-console.log(result)
+for await (const chunk of resultStream) {
+	console.log(`${chunk}|`)
+}
