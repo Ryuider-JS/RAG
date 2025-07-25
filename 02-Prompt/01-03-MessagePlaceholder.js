@@ -9,8 +9,6 @@ import { AIMessage, HumanMessage } from '@langchain/core/messages'
 
 loadEnv()
 
-const template = 'Tell me a {adjective} joke about the day {date} and why is joke?'
-
 const prompt = ChatPromptTemplate.fromMessages([
 	['system', '당신은 친절한 AI 어시스턴트입니다. 당신의 이름은 {name} 입니다.'],
 	new MessagesPlaceholder('message'),
@@ -21,16 +19,7 @@ const model = new ChatOpenAI()
 
 const parser = new StringOutputParser()
 
-const chain = RunnableSequence.from([
-	{
-		name: new RunnablePassthrough(),
-		userInput: new RunnablePassthrough(),
-		message: new RunnablePassthrough(),
-	},
-	prompt,
-	model,
-	parser,
-])
+const chain = RunnableSequence.from([prompt, model, parser])
 
 const result = await chain.invoke({
 	name: '지승',
