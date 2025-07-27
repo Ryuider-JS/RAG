@@ -10,7 +10,7 @@ loadEnv()
 
 const prompt = ChatPromptTemplate.fromMessages([
 	['system', '당신은 친절한 AI 어시스턴트입니다. 당신의 이름은 {name} 입니다.'],
-	new MessagesPlaceholder('history'),
+	['placeholder', '{history}'],
 	['human', '{userInput}'],
 ])
 
