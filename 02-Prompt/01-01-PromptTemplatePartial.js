@@ -1,10 +1,11 @@
 /** @format */
 
-import { loadEnv } from '../loadEnv.js'
-import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate, PromptTemplate } from '@langchain/core/prompts'
-import { StringOutputParser } from '@langchain/core/output_parsers'
+
+import { ChatOpenAI } from '@langchain/openai'
 import { RunnableSequence } from '@langchain/core/runnables'
+import { StringOutputParser } from '@langchain/core/output_parsers'
+import { loadEnv } from '../loadEnv.js'
 
 loadEnv()
 
