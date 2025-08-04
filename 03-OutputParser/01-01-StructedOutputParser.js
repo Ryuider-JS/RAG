@@ -51,7 +51,7 @@ FORMAT:
 `)
 
 const partialedPrompt = await prompt.partial({
-	format: format.getFormatInstructions(),
+	format: parser.getFormatInstructions(),
 	emailConversation,
 })
 
