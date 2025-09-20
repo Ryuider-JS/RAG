@@ -1,5 +1,3 @@
-/** @format */
-
 import { loadEnv } from '../loadEnv.js'
 import { HumanMessage } from '@langchain/core/messages'
 
@@ -24,4 +22,5 @@ const message = new HumanMessage({
 	],
 })
 const response = await llm.stream([message])
+
 console.log(response)

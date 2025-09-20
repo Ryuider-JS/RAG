@@ -1,10 +1,8 @@
-/** @format */
-
 import { ChatOpenAI } from '@langchain/openai'
 
-import * as dotenv from 'dotenv'
+import { loadEnv } from '../loadEnv.js'
 
-dotenv.config()
+loadEnv()
 
 const model = new ChatOpenAI({
 	model: 'gpt-4.1-nano',
